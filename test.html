@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css" />
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main">
+
+        <div class="container mt-3">
+            <h5>Here are tasks you haven't completed yet:</h5>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                                    <div class="todo-box mb-1">
+                                        <p class="date">Date</p>
+                                        <div class="float-left">
+                                            <p>Title</p>
+                                        </div>
+                                        <div class="float-right">
+                                            <a href="<%= link %>" class="purple-btn">
+                                                View
+                                            </a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                <div class="todo-box">
+                                    <p>No task created yet.</p>
+                                </div>
+                            <div class="completed mt-3">
+                                <a href="/todolist/completed" class="blue-btn">Check Completed</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-1">
+                            <a href="/create-todo" class="purple-btn">
+                                <i class="fa fa-plus"></i>
+                                Add to List
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

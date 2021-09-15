@@ -1,0 +1,41 @@
+<%- include('includes/header') -%>
+<body>
+    
+    <div class="main">
+
+        <div class="container mt-3">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="feature-box mb-2">
+                        <form method="POST">
+                            <div class="mb-2">
+                                <label for="date" class="label">Date :</label>
+                                <input type="date" name="date" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="title" class="label">Title :</label>
+                                <input type="text" name="title" class="form-control" />
+                            </div>
+                            <div class="mb-2">
+                                <label for="date" class="label">Details :</label>
+                                <textarea name="details" class="form-control"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="main-btn mb-3" value="add" />
+                                <% if(locals.message) { %>
+                                    <p class="err"><%= message %></p>
+                                <% } %>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="text-center">
+                        <a href="/todos" class="purple-btn">Check List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('includes/footer') -%>
+</body>
+</html>

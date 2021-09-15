@@ -1,0 +1,54 @@
+<%- include('includes/header') -%>
+<body class="bg-background">
+    <section id="signup">
+        <div class="container mt-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form method="POST" class="form-horizontal">
+                        <h3 class="text-center">Create an account</h3>
+                        <hr />
+                        <%if (locals.error) { %>
+                            <p class="text-center err"><%= error %></p>
+                        <% } %>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="label">First Name :</label>
+                                <input type="text" class="form-control map-form filler" name="firstName" id="firstName" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="label">Last Name :</label>
+                                <input type="text" class="form-control map-form filler" name="lastName" id="lastName" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="password" class="label">Password :</label>
+                                <input type="password" class="form-control map-form filler" name="password" id="password" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cPassword" class="label">Confirm Password :</label>
+                                <input type="password" class="form-control map-form filler" name="cPassword" id="cPassword" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="username" class="label">Email :</label>
+                                <input type="email" class="form-control map-form filler" name="email" id="email" />
+                            </div>
+                            <div class="col-md-12 mb-3 text-center">
+                                <input type="submit" class="main-btn map-form" id="submit" value="Sign Up">
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="/" class="blue-btn mb-4 float-left">Back Home</a>
+                            <a href="/users/login" class="normal-link float-right">Login?</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <script src="/javascripts/registration.js" type="module"></script>
+    <%- include('includes/footer') -%>
+</body>
+</html>
+    

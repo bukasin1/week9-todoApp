@@ -1,0 +1,79 @@
+<%- include('includes/header') -%>
+<body>
+    
+    <div class="main">
+
+        <a class="dropdown-item" href="/logout">
+            <i class="fa fa-sign-out mr-1"></i> 
+            Logout
+        </a> 
+        <div class="container mt-3">
+            <% if(locals.completed){ %>
+                <h5>Here are tasks you have completed:</h5> 
+            <% }else{ %>
+                <h5>Here are tasks you haven't completed yet:</h5>
+            <% } %>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <% if(todos.length > 0) { %>
+                                <% for(let i = 0; i < todos.length; i++) { %>
+                                    <div class="todo-box mb-1">
+                                        <% let date = todos[i].date.getDate() + "/" + (todos[i].date.getMonth() + 1) + "/" + todos[i].date.getFullYear() %>
+                                        <p class="date"><%= date %></p>
+                                        <div class="float-left">
+                                            <p><%= todos[i].title %></p>
+                                        </div>
+                                        <div class="float-right">
+                                            <% let link = "/todos/" + todos[i]._id  %>
+                                            <a href="<%= link %>" class="purple-btn">
+                                                View
+                                            </a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                <% } %>
+                            <% }else { %>
+
+                                <% if(!locals.completed){ %>
+                                    <div class="todo-box">
+                                        <p>No task created yet.</p>
+                                    </div>
+                                <% }else{ %>
+                                    <div class="todo-box">
+                                        <p>No task completed yet.</p>
+                                    </div>
+                                <% } %>
+                                
+                            <% } %>
+                            <% if(!locals.completed){ %>
+                                <div class="completed mt-3">
+                                    <a href="/todos/completed" class="blue-btn">Check Completed</a>
+                                </div>
+                            <% } %>
+                        </div>
+                        <% if(locals.completed){ %>
+                            <div class="col-md-4 mb-1">
+                                <a href="/todos" class="purple-btn">
+                                    <i class="fa fa-arrow-left"></i>
+                                    Back to new
+                                </a>
+                            </div>
+                        <% }else{ %>
+                            <div class="col-md-4 mb-1">
+                                <a href="/create-todo" class="purple-btn">
+                                    <i class="fa fa-plus"></i>
+                                    Add to List
+                                </a>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('includes/footer') -%>
+</body>
+</html>

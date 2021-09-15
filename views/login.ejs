@@ -1,0 +1,46 @@
+<%- include('includes/header') -%>
+<body class="bg-background">
+    <section id="signup">
+        <div class="container mt-3">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="POST" class="form-horizontal">
+                        <h3 class="text-center">Login</h3>
+                        <hr />
+                        <%if (locals.error) { %>
+                            <p class="text-center err"><%= error %></p>
+                        <% } %>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="firstName" class="label">Email :</label>
+                                <input type="email" class="form-control map-form" name="email" id="email" />
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="lastName" class="label">Password :</label>
+                                <input type="password" class="form-control map-form" name="password" id="password" />
+                            </div>
+                            <div class="col-md-12 mb-3 text-center">
+                                <input type="submit" class="main-btn map-form" id="submit" value="Login">
+                                <hr />
+                            </div>
+                        </div>
+                        <div>
+                            <a class="float-left normal-link" href="/users/signup">Sign Up?</a>
+                            <a class="float-right normal-link" href="#">Forgot Password?</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <hr/ >
+                    <a href="/" class="blue-btn mb-4">Back Home</a>
+            </div>
+        </div>
+    </section>
+                
+    <%- include('includes/footer') -%>
+</body>
+</html>
+                
